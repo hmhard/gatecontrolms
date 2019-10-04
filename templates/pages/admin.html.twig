@@ -1,0 +1,55 @@
+  {% extends "base.html.twig" %}
+
+  {% block title %}
+    <h3 class="text-info">Welcome Page</h3>
+{% endblock %}
+ 
+
+{% block backzone %}
+    
+{% endblock %}
+ {% block body %}
+
+<div class="row">
+<div class="col-md-8">
+ <div class="jumbotron">
+  <h1 class="display-3">Home</h1>
+  <p class="lead">Welcome</p>
+  <hr class="my-2">
+   <p>Jimma University was founded on the amalgamation of the the Jimma Institute of Health Science and 
+   the Jimma College of Agriculture in the 1980’s. Both institutions had been national leaders in their 
+   respective fields, and with the merger, the development of a new, multifaceted and development oriented
+    institution was able to emerge from the two former specialty institutions. Throughout the 1990’s 
+    Ethiopia as a nation was determined to overcome the significant development challenges facing the
+     country. Such challenges were found in all sectors of society and in all regions.
+      Given this reality, new institutions needed to be developed in a manner that would be 
+      conducive to the development of the nation. </p>
+  
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://www.ju.edu.et" role="button">View More</a>
+  </p>
+</div>
+</div>
+<div class="col-md-4">
+ <div class="jumbotron">
+  <h2 class="display-3">Jimma University</h2>
+ 
+  <hr class="my-2">
+ <img src="{{asset('images/julogo.jpg')}}" class="img-responsive " width="300" height="300" alt="ju"/>
+  
+  
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://www.ju.edu.et" role="button">View More</a>
+  </p>
+</div>
+</div>
+</div>
+
+ <h1 class="jumbotron">
+ 
+ Welcome to Gate Control Management system
+
+ 
+ </h1>
+     
+ {% endblock %}

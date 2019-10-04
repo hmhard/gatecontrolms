@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    <h3 class="text-info">Display Customers  ({{customers|length}})</h3>
+{% endblock %}
+
+{% block body %}
+   
+
+    <div class="responsive-table">
+    <table class="table table-bordered table-condensed">
+    <thead class="bg-info">
+    <tr>
+    <th>RNo</th>
+    <th>Name</th>
+    <th>Account</th>
+    <th>Date Registered</th>
+    <th>Action</th>
+
+    </tr>
+    </thead>
+<tbody>
+   
+    {% set i=1 %}
+    {% for customer in customers %}
+
+
+
+
+<tr>
+<td>
+{{ i }}
+</td>
+<td>
+{{customer.name}}
+</td>
+<td>
+{{customer.accountNo}}
+</td>
+<td>
+{{customer.registeredDate|date("Y-m-d")}}
+</td>
+<td>
+X
+</td>
+
+</tr>
+{% set i=i+1 %}
+{% endfor %}
+</tbody>
+    </table>
+
+     
+    </div>
+ 
+
+
+{% endblock %}

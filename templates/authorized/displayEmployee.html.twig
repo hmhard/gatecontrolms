@@ -1,0 +1,70 @@
+{% extends "base.admin.twig" %}
+
+{% block title %}
+    <h3 class="text-info">Display Employees  ({{employees|length}})</h3>
+{% endblock %}
+
+{% block body %}
+   
+
+    <div class="responsive-table">
+    <table class="table table-bordered table-condensed dataTable">
+    <thead class="bg-info">
+    <tr>
+    <th>RNo</th>
+    <th>Id No</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone No</th>
+    <th>Occupation</th>
+    <th>Date Registered</th>
+    <th>Action</th>
+
+    </tr>
+    </thead>
+<tbody>
+   
+    {% set i=1 %}
+    {% for customer in employees %}
+
+
+<tr>
+<td>
+{{ i }}
+</td>
+<td>
+{{ customer.employeeId }}
+</td>
+<td>
+{{customer.firstName}}
+</td>
+<td>
+{{customer.lastName}}
+</td>
+<td>
+{{customer.gender}}
+</td>
+
+<td>
+{{customer.phoneNo}}
+</td>
+
+<td>
+{{customer.registeredAt|date("Y-m-d")}}
+</td>
+<td>
+X
+</td>
+
+</tr>
+{% set i=i+1 %}
+{% endfor %}
+</tbody>
+    </table>
+
+     
+    </div>
+ 
+
+
+{% endblock %}

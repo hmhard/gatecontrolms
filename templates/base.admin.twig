@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>{% block pagetitle %}Welcome to {% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css"/>
+ 
+
+        {% endblock %}
+    </head>
+
+
+
+<body>
+
+{% block myheader %}
+  
+        <div class="" style="height:100px;margin:0;padding:0;background-color:#0cadd5">
+            <h2 class="h2" style="margin:0;padding:30px;text-align:center;color:white;">Gate Control Management System</h2>
+</div>
+{% endblock %}
+
+{% block navigation %}
+  
+
+
+<nav class="navbar navbar-primary">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ path('admin_index')}}">Gate CMS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{{ path('admin_index')}}">Home</a></li>
+
+     
+      <li><a href="{{ path('search')}}">Control</a></li>
+      <li><a href="{{ path('list_down')}}">View All</a></li>
+  
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+            <li class=""><a href="{{ path('logout')}}" class="text-danger">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+{% endblock %}
+<div class="container-fluid">
+
+{%  for messages in app.flashes('success') %}
+
+  <h2 class="alert alert-success  fade in alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  {{messages }}
+  </h2>
+{% endfor %}
+
+
+
+<div style="margin:10px;text-align:center " class="h1">
+{% block title %}
+    
+{% endblock %}
+
+
+
+</div>
+
+ 
+        {% block body %}
+
+
+
+        {% endblock %}
+
+    </div>  
+
+<footer class="footer">
+
+    <div class="" style="height:100px;margin:0;padding:0;background-color:#111e3e">
+            <h2 class="h2" style="margin:0;padding:0;text-align:center;color:white;">Gate Control Management System</h2>
+</div>
+
+</footer>
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>
+ 
+ <script>
+ $(function(){
+   $('#search_form_user_id').attr('autofocus','on');
+$(".dataTable").DataTable();
+   
+ });
+ </script>
+        {% endblock %}
+
+    
+
+    </body>
+</html>
